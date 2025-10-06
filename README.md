@@ -1,55 +1,75 @@
-# MultiAgentStockTrader Crew
+# Multi Agent Stock Trader
 
-Welcome to the MultiAgentStockTrader Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+An autonomous multi-agent financial research and stock analysis system powered by the **CrewAI** agentic framework.
 
-## Installation
+Agentic Stock Trader simulates a collaborative research team of AI agents that autonomously discover, analyze, and recommend the best investment opportunities in the stock market. Each agent specializes in a task, from tracking trending companies to conducting deep financial research, and works together under a hierarchical structure to produce high-quality investment insights.
 
-Ensure you have Python >=3.10 <3.14 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+---
 
-First, if you haven't already, install uv:
+## Overview
 
-```bash
-pip install uv
-```
+The system operates as an autonomous CrewAI pipeline, where specialized AI agents perform distinct roles:
 
-Next, navigate to your project directory and install the dependencies:
+1. **Trending Company Finder** – Scans financial news to identify trending companies.  
+2. **Financial Researcher** – Performs detailed financial and market analysis.  
+3. **Stock Picker** – Evaluates and selects the most promising stock for investment.  
+4. **Manager Agent** – Delegates tasks, ensures workflow consistency, and synthesizes final outputs.
 
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
+Once the decision is made, the system delivers:
+- A comprehensive market report  
+- A real-time push notification with investment recommendations (via Pushover API)
 
-**Add your `OPENAI_API_KEY` into the `.env` file**
+---
 
-- Modify `src/multi_agent_stock_trader/config/agents.yaml` to define your agents
-- Modify `src/multi_agent_stock_trader/config/tasks.yaml` to define your tasks
-- Modify `src/multi_agent_stock_trader/crew.py` to add your own logic, tools and specific args
-- Modify `src/multi_agent_stock_trader/main.py` to add custom inputs for your agents and tasks
 
-## Running the Project
+Each agent is defined in `config/agents.yaml`, while their corresponding objectives and tasks are outlined in `config/tasks.yaml`.
 
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+---
 
-```bash
-$ crewai run
-```
+## Key Features
 
-This command initializes the Multi_Agent_Stock_Trader Crew, assembling the agents and assigning them tasks as defined in your configuration.
+- Multi-Agent Collaboration — Each agent performs a unique, specialized task.  
+- Hierarchical Workflow — A manager agent coordinates and verifies work.  
+- RAG-Based Memory System — Combines short-term and long-term storage using ChromaDB and SQLite.  
+- Real-Time Notifications — Sends stock alerts through Pushover API.  
+- Persistent Context Awareness — Agents remember prior analyses and avoid duplicate companies.  
+- Configurable Framework — Easily modify or add new agents and tasks.
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+---
 
-## Understanding Your Crew
+## Tech Stack
 
-The Multi_Agent_Stock_Trader Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+| Category | Tools / Frameworks |
+|-----------|--------------------|
+| Language | Python |
+| Agent Framework | CrewAI |
+| LLM Integration | OpenAI GPT Models |
+| Data Retrieval | SerperDevTool |
+| Memory Storage | RAG (ChromaDB) · SQLite |
+| Notifications | Pushover API |
+| Validation / Models | Pydantic |
+| Dependency Management | UV / pip |
 
-## Support
+---
 
-For support, questions, or feedback regarding the MultiAgentStockTrader Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+## Setup Instructions
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jualam/.git
+   cd CrewAI_Debate_System
+   
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt or uv sync
+   
+3. Add your API keys in a .env file: 
+OPENAI_API_KEY=your_openai_key
+CHROMA_OPENAI_API_KEY=your_openai_key
+PUSHOVER_USER=your_pushover_user_key
+PUSHOVER_TOKEN=your_pushover_token
+SERPER_API_KEY=your_serper_key
+MODEL=gpt-4o-mini
 
-Let's create wonders together with the power and simplicity of crewAI.
-# Multi_Agent_Stock_Trader
+4. Start the application: crewai run
+
+
