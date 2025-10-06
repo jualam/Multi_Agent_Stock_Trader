@@ -55,14 +55,15 @@ Each agent is defined in `config/agents.yaml`, while their corresponding objecti
 ## Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/jualam/.git
+   git clone https://github.com/jualam/Multi_Agent_Stock_Trader.git
    cd CrewAI_Debate_System
    
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt or uv sync
    
-3. Add your API keys in a .env file: 
+3. Add your API keys in a .env file:
+
 OPENAI_API_KEY=your_openai_key
 CHROMA_OPENAI_API_KEY=your_openai_key
 PUSHOVER_USER=your_pushover_user_key
@@ -70,6 +71,6 @@ PUSHOVER_TOKEN=your_pushover_token
 SERPER_API_KEY=your_serper_key
 MODEL=gpt-4o-mini
 
-4. Start the application: crewai run
+5. Start the application: crewai run
 
 
