@@ -9,10 +9,6 @@ __pycache__/
 .venv/
 venv/
 
-# CrewAI outputs
-memory/
-output/
-
 # System files
 .DS_Store
 
