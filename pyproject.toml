@@ -1,0 +1,23 @@
+[project]
+name = "multi_agent_stock_trader"
+version = "0.1.0"
+description = "Multi_Agent_Stock_Trader using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.201.1,<1.0.0"
+]
+
+[project.scripts]
+multi_agent_stock_trader = "multi_agent_stock_trader.main:run"
+run_crew = "multi_agent_stock_trader.main:run"
+train = "multi_agent_stock_trader.main:train"
+replay = "multi_agent_stock_trader.main:replay"
+test = "multi_agent_stock_trader.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"

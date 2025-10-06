@@ -1,0 +1,18 @@
+# Environment
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# CrewAI outputs
+memory/
+output/
+
+# System files
+.DS_Store
+
